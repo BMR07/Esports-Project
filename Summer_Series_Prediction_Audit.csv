@@ -1,0 +1,99 @@
+Date,Series,Predicted_Winner,Win_Probability,Actual_Winner,Correct,Score
+2023-06-07,Dplus KIA vs Liiv SANDBOX,Dplus KIA,0.653,Dplus KIA,True,'2-0
+2023-06-07,Hanwha Life Esports vs KT Rolster,KT Rolster,0.705,KT Rolster,True,'2-1
+2023-06-08,DN Freecs vs DRX,DN Freecs,0.604,DN Freecs,True,'2-0
+2023-06-08,Nongshim RedForce vs OKSavingsBank BRION,OKSavingsBank BRION,0.618,Nongshim RedForce,False,'1-2
+2023-06-09,Gen.G vs KT Rolster,KT Rolster,0.537,Gen.G,False,'1-2
+2023-06-09,Hanwha Life Esports vs T1,T1,0.69,T1,True,'2-1
+2023-06-10,DN Freecs vs OKSavingsBank BRION,DN Freecs,0.619,DN Freecs,True,'2-0
+2023-06-10,Liiv SANDBOX vs Nongshim RedForce,Liiv SANDBOX,0.596,Liiv SANDBOX,True,'2-0
+2023-06-11,DRX vs Dplus KIA,Dplus KIA,0.83,Dplus KIA,True,'2-1
+2023-06-11,Gen.G vs T1,T1,0.518,Gen.G,False,'1-2
+2023-06-14,DN Freecs vs Gen.G,Gen.G,0.779,Gen.G,True,'2-0
+2023-06-14,DRX vs Hanwha Life Esports,Hanwha Life Esports,0.775,Hanwha Life Esports,True,'2-0
+2023-06-15,Dplus KIA vs OKSavingsBank BRION,Dplus KIA,0.661,OKSavingsBank BRION,False,'1-2
+2023-06-15,Liiv SANDBOX vs T1,T1,0.795,T1,True,'2-0
+2023-06-16,DRX vs KT Rolster,KT Rolster,0.853,KT Rolster,True,'2-0
+2023-06-16,Gen.G vs Nongshim RedForce,Gen.G,0.842,Gen.G,True,'2-0
+2023-06-17,DN Freecs vs Hanwha Life Esports,Hanwha Life Esports,0.631,Hanwha Life Esports,True,'2-0
+2023-06-17,OKSavingsBank BRION vs T1,T1,0.833,T1,True,'2-0
+2023-06-18,Dplus KIA vs Nongshim RedForce,Dplus KIA,0.736,Dplus KIA,True,'2-0
+2023-06-18,KT Rolster vs Liiv SANDBOX,KT Rolster,0.706,KT Rolster,True,'2-0
+2023-06-21,DN Freecs vs T1,T1,0.742,T1,True,'2-0
+2023-06-21,Liiv SANDBOX vs OKSavingsBank BRION,OKSavingsBank BRION,0.507,Liiv SANDBOX,False,'1-2
+2023-06-22,DRX vs Gen.G,Gen.G,0.907,Gen.G,True,'2-0
+2023-06-22,Dplus KIA vs KT Rolster,KT Rolster,0.628,KT Rolster,True,'2-0
+2023-06-23,DN Freecs vs Nongshim RedForce,DN Freecs,0.643,DN Freecs,True,'2-0
+2023-06-23,Hanwha Life Esports vs Liiv SANDBOX,Hanwha Life Esports,0.569,Hanwha Life Esports,True,'2-1
+2023-06-24,Dplus KIA vs Gen.G,Gen.G,0.658,Gen.G,True,'2-1
+2023-06-24,KT Rolster vs T1,T1,0.551,KT Rolster,False,'0-2
+2023-06-25,DRX vs Nongshim RedForce,Nongshim RedForce,0.56,DRX,False,'1-2
+2023-06-25,Hanwha Life Esports vs OKSavingsBank BRION,Hanwha Life Esports,0.629,Hanwha Life Esports,True,'2-0
+2023-06-28,DN Freecs vs KT Rolster,KT Rolster,0.756,KT Rolster,True,'2-0
+2023-06-28,Dplus KIA vs Hanwha Life Esports,Dplus KIA,0.511,Dplus KIA,True,'2-0
+2023-06-29,DRX vs Liiv SANDBOX,Liiv SANDBOX,0.73,DRX,False,'1-2
+2023-06-29,Gen.G vs OKSavingsBank BRION,Gen.G,0.813,Gen.G,True,'2-0
+2023-06-30,Dplus KIA vs T1,T1,0.611,T1,True,'2-0
+2023-06-30,KT Rolster vs Nongshim RedForce,KT Rolster,0.836,KT Rolster,True,'2-0
+2023-07-01,DN Freecs vs Liiv SANDBOX,DN Freecs,0.505,DN Freecs,True,'2-0
+2023-07-01,DRX vs OKSavingsBank BRION,OKSavingsBank BRION,0.63,OKSavingsBank BRION,True,'2-1
+2023-07-02,Gen.G vs Hanwha Life Esports,Gen.G,0.603,Gen.G,True,'2-0
+2023-07-02,Nongshim RedForce vs T1,T1,0.892,T1,True,'2-1
+2023-07-05,DN Freecs vs Dplus KIA,Dplus KIA,0.708,Dplus KIA,True,'2-0
+2023-07-05,DRX vs T1,T1,0.894,DRX,False,'0-2
+2023-07-06,Gen.G vs Liiv SANDBOX,Gen.G,0.732,Gen.G,True,'2-0
+2023-07-06,Hanwha Life Esports vs Nongshim RedForce,Hanwha Life Esports,0.743,Hanwha Life Esports,True,'2-0
+2023-07-07,DRX vs Dplus KIA,Dplus KIA,0.87,Dplus KIA,True,'2-0
+2023-07-07,KT Rolster vs OKSavingsBank BRION,KT Rolster,0.792,KT Rolster,True,'2-0
+2023-07-08,Gen.G vs T1,T1,0.532,Gen.G,False,'0-2
+2023-07-08,Liiv SANDBOX vs Nongshim RedForce,Liiv SANDBOX,0.709,Nongshim RedForce,False,'0-2
+2023-07-09,DN Freecs vs Hanwha Life Esports,Hanwha Life Esports,0.642,Hanwha Life Esports,True,'2-0
+2023-07-09,KT Rolster vs OKSavingsBank BRION,KT Rolster,0.792,KT Rolster,True,'2-0
+2023-07-12,Dplus KIA vs Liiv SANDBOX,Dplus KIA,0.652,Dplus KIA,True,'2-0
+2023-07-12,Gen.G vs Nongshim RedForce,Gen.G,0.853,Gen.G,True,'2-0
+2023-07-13,DN Freecs vs OKSavingsBank BRION,DN Freecs,0.614,OKSavingsBank BRION,False,'1-2
+2023-07-13,Hanwha Life Esports vs KT Rolster,KT Rolster,0.699,KT Rolster,True,'2-1
+2023-07-14,DRX vs Gen.G,Gen.G,0.913,Gen.G,True,'2-0
+2023-07-14,Nongshim RedForce vs T1,T1,0.897,T1,True,'2-0
+2023-07-15,DN Freecs vs Liiv SANDBOX,Liiv SANDBOX,0.601,Liiv SANDBOX,True,'2-0
+2023-07-15,Hanwha Life Esports vs OKSavingsBank BRION,Hanwha Life Esports,0.684,Hanwha Life Esports,True,'2-1
+2023-07-16,DRX vs KT Rolster,KT Rolster,0.908,KT Rolster,True,'2-1
+2023-07-16,Dplus KIA vs T1,T1,0.625,Dplus KIA,False,'0-2
+2023-07-19,Dplus KIA vs KT Rolster,KT Rolster,0.628,KT Rolster,True,'2-0
+2023-07-19,Hanwha Life Esports vs Liiv SANDBOX,Liiv SANDBOX,0.526,Hanwha Life Esports,False,'0-2
+2023-07-20,DN Freecs vs Gen.G,Gen.G,0.783,Gen.G,True,'2-0
+2023-07-20,DRX vs Nongshim RedForce,Nongshim RedForce,0.623,Nongshim RedForce,True,'2-1
+2023-07-21,Dplus KIA vs OKSavingsBank BRION,Dplus KIA,0.748,Dplus KIA,True,'2-1
+2023-07-21,Hanwha Life Esports vs T1,T1,0.696,Hanwha Life Esports,False,'0-2
+2023-07-22,DN Freecs vs Nongshim RedForce,DN Freecs,0.681,Nongshim RedForce,False,'1-2
+2023-07-22,Gen.G vs KT Rolster,KT Rolster,0.537,KT Rolster,True,'2-0
+2023-07-23,DRX vs Liiv SANDBOX,Liiv SANDBOX,0.814,Liiv SANDBOX,True,'2-0
+2023-07-23,OKSavingsBank BRION vs T1,T1,0.867,OKSavingsBank BRION,False,'1-2
+2023-07-26,DN Freecs vs KT Rolster,KT Rolster,0.759,KT Rolster,True,'2-0
+2023-07-26,Gen.G vs Liiv SANDBOX,Gen.G,0.644,Gen.G,True,'2-0
+2023-07-27,DRX vs T1,T1,0.907,DRX,False,'1-2
+2023-07-27,Hanwha Life Esports vs Nongshim RedForce,Hanwha Life Esports,0.706,Hanwha Life Esports,True,'2-0
+2023-07-28,DN Freecs vs Dplus KIA,Dplus KIA,0.712,Dplus KIA,True,'2-0
+2023-07-28,Liiv SANDBOX vs OKSavingsBank BRION,Liiv SANDBOX,0.645,Liiv SANDBOX,True,'2-0
+2023-07-29,DRX vs Hanwha Life Esports,Hanwha Life Esports,0.849,Hanwha Life Esports,True,'2-0
+2023-07-29,KT Rolster vs T1,T1,0.565,KT Rolster,False,'0-2
+2023-07-30,Dplus KIA vs Gen.G,Gen.G,0.658,Gen.G,True,'2-0
+2023-07-30,Nongshim RedForce vs OKSavingsBank BRION,OKSavingsBank BRION,0.638,Nongshim RedForce,False,'1-2
+2023-08-02,DN Freecs vs T1,T1,0.746,T1,True,'2-0
+2023-08-02,Dplus KIA vs Nongshim RedForce,Dplus KIA,0.799,Dplus KIA,True,'2-0
+2023-08-03,DRX vs OKSavingsBank BRION,OKSavingsBank BRION,0.663,DRX,False,'0-2
+2023-08-03,Gen.G vs Hanwha Life Esports,Gen.G,0.603,Gen.G,True,'2-0
+2023-08-04,KT Rolster vs Nongshim RedForce,KT Rolster,0.836,KT Rolster,True,'2-1
+2023-08-04,Liiv SANDBOX vs T1,T1,0.705,T1,True,'3-0
+2023-08-05,Dplus KIA vs Hanwha Life Esports,Dplus KIA,0.51,Hanwha Life Esports,False,'0-2
+2023-08-05,Gen.G vs OKSavingsBank BRION,Gen.G,0.813,OKSavingsBank BRION,False,'0-2
+2023-08-06,DN Freecs vs DRX,DN Freecs,0.704,DRX,False,'0-2
+2023-08-06,KT Rolster vs Liiv SANDBOX,KT Rolster,0.514,KT Rolster,True,'2-0
+2023-08-08,DRX vs Hanwha Life Esports,Hanwha Life Esports,0.849,Hanwha Life Esports,True,'3-0
+2023-08-09,Dplus KIA vs T1,T1,0.611,T1,True,'3-1
+2023-08-10,KT Rolster vs T1,T1,0.551,T1,True,'3-2
+2023-08-11,Gen.G vs Hanwha Life Esports,Gen.G,0.603,Gen.G,True,'3-0
+2023-08-12,Gen.G vs T1,T1,0.518,Gen.G,False,'2-3
+2023-08-13,Hanwha Life Esports vs KT Rolster,KT Rolster,0.699,KT Rolster,True,'3-0
+2023-08-19,KT Rolster vs T1,T1,0.551,T1,True,'3-2
+2023-08-20,Gen.G vs T1,T1,0.518,Gen.G,False,'0-3
