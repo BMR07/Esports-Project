@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 
-# The "Survivor" Feature Set (r > 0.70 pruned)
+# The "Survivor" Feature Set: Key performance indicators with low multicollinearity.
 SURVIVOR_FEATURES = [
     'net_golddiffat15', 'net_xpdiffat15', 'net_csdiffat15',
     'net_golddiffat25', 'net_xpdiffat25', 'net_csdiffat25',
@@ -12,22 +12,28 @@ SURVIVOR_FEATURES = [
 ]
 
 def train_role_models(df_players):
-    """Trains a Logistic Regression for each role to predict Wins."""
+    """
+    STAGES 1 & 2: Analyzes role factors and evaluates players.
+    Trains five separate Logistic Regression models to define what 'good' 
+    performance looks like for each specific role.
+    """
     models = {}
     scalers = {}
-    
     roles = ['top', 'jng', 'mid', 'bot', 'sup']
     
     for role in roles:
+        # Filter for role and ensure no missing values in features or target
         role_df = df_players[df_players['position'] == role].dropna(subset=SURVIVOR_FEATURES + ['result'])
+        
         X = role_df[SURVIVOR_FEATURES]
         y = role_df['result']
         
+        # Scale features: Essential for Logistic Regression coefficients to be comparable
         scaler = StandardScaler()
         X_scaled = scaler.fit_transform(X)
         
-        # High max_iter to ensure convergence
-        model = LogisticRegression(max_iter=2000)
+        # Fit model: This determines which SURVIVOR_FEATURES matter most for this role
+        model = LogisticRegression(max_iter=2000, C=1.0) 
         model.fit(X_scaled, y)
         
         models[role] = model
@@ -37,10 +43,12 @@ def train_role_models(df_players):
 
 def calculate_role_agency(df_w_probs):
     """
-    Runs the Meta-Model: Uses player Win Probabilities to predict the final Game Result.
-    Coefficients determine how much 'Agency' each role has.
+    STAGE 3: Evaluates role importance (Agency).
+    Uses the raw win probabilities (player grades) of all 5 teammates to 
+    predict the game outcome. The resulting weights represent 'Role Agency'.
     """
-    # Pivot to get one row per game: [gameid, top_p, jng_p, ..., result]
+    # 1. Pivot data to represent one team's performance per row
+    # Required format: [gameid, teamname, result, top, jng, mid, bot, sup]
     agency_df = df_w_probs.pivot_table(
         index=['gameid', 'teamname', 'result'], 
         columns='position', 
@@ -51,11 +59,16 @@ def calculate_role_agency(df_w_probs):
     X = agency_df[roles]
     y = agency_df['result']
     
-    meta_model = LogisticRegression(fit_intercept=False) # No intercept, purely weight based
+    # 2. Fit the Meta-Model
+    # We use fit_intercept=False because if all players have 0 probability, 
+    # the team should have 0 probability of winning.
+    meta_model = LogisticRegression(fit_intercept=False)
     meta_model.fit(X, y)
     
-    # Normalize coefficients to percentages
-    weights = np.abs(meta_model.coef_[0])
-    agency_map = dict(zip(roles, (weights / weights.sum()) * 100))
+    # 3. Extract and Normalize Weights
+    # Coefficients tell us how much a 1% increase in a player's performance 
+    # impacts the team's total win chance.
+    raw_weights = np.abs(meta_model.coef_[0])
+    normalized_weights = (raw_weights / raw_weights.sum()) * 100
     
-    return agency_map
+    return dict(zip(roles, normalized_weights))
