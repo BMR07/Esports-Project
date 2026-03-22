@@ -15,6 +15,30 @@ PROJECT_ROOT = Path("~/Desktop/Esports Project").expanduser()
 OUTPUT_DIR = PROJECT_ROOT / "outputs"
 AUDIT_FILE = OUTPUT_DIR / "Summer_Series_Prediction_Audit.csv"
 
+def print_libr_leaderboard(df, top_n=10):
+    """
+    Groups by player to find seasonal performance and prints a clean leaderboard.
+    """
+    # Filter for player rows only and calculate seasonal average
+    leaderboard = df.groupby(['playername', 'position'])['LIBR'].agg(['mean', 'count']).reset_index()
+    leaderboard.columns = ['Player', 'Role', 'Avg_LIBR', 'Games_Played']
+    
+    # Filter for players with a meaningful sample size (e.g., > 5 games)
+    leaderboard = leaderboard[leaderboard['Games_Played'] > 5]
+    
+    # Sort by the highest objective skill grade
+    top_players = leaderboard.nlargest(top_n, 'Avg_LIBR')
+
+    print("\n" + "-"*40)
+    print(f"   TOP {top_n} PLAYERS BY OBJECTIVE LIBR   ")
+    print("-"*40)
+    print(f"{'Rank':<5} {'Player':<12} {'Role':<8} {'LIBR':<8}")
+    
+    for i, (_, row) in enumerate(top_players.iterrows(), 1):
+        print(f"{i:<5} {row['Player']:<12} {row['Role']:<8} {row['Avg_LIBR']:>6.2f}")
+    print("-"*40 + "\n")
+
+
 class SeriesBacktest:
     """
     Simulates a betting/prediction environment.
@@ -45,7 +69,7 @@ class SeriesBacktest:
                 score_b += contribution
                 
         return score_a - score_b, score_a, score_b
-
+    
     def run(self):
         warnings.filterwarnings("ignore", category=UserWarning)
         print("\n" + "="*50)
@@ -61,7 +85,7 @@ class SeriesBacktest:
         print("[1/4] Analyzing Spring Split to establish baselines...")
         models, scalers, features = train_role_models(df_spring)
         df_spring_scored = calculate_npv(df_spring, models, scalers, features)
-        df_spring_scored = calculate_libr(df_spring_scored)
+        df_spring_scored = calculate_libr(df_spring_scored, models, features)
         
         # Map out the meta: How much does each role matter?
         raw_agency = calculate_role_agency(df_spring_scored)
@@ -69,6 +93,7 @@ class SeriesBacktest:
         
         # Map out the players: How good is each individual?
         self.player_ratings = df_spring_scored.groupby('playername')['LIBR'].mean().to_dict()
+        print_libr_leaderboard(df_spring_scored)
 
         # 3. CALIBRATION: Link Skill Gaps to Win Probabilities
         print("[2/4] Calibrating Skill Gap vs. Win Chance...")
