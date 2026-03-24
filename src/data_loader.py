@@ -5,6 +5,7 @@ from pathlib import Path
 # Setup Paths
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
+# Default path for the standard LCK-only loader
 FILE_PATH = DATA_DIR / "2023_LoL_esports_match_data_from_OraclesElixir.csv"
 
 # Configuration: Define stats for calculations outside the functions
@@ -29,6 +30,29 @@ def calculate_net_features(df_players, target_stats):
     for stat in target_stats:
         df_players[f'net_{stat}'] = df_players[stat] - (team_sums[stat] / 5)
         
+    return df_players
+
+def inject_archetype_features(df_players):
+    """
+    Calculates proxy metrics to differentiate playstyles (e.g., Assassin vs DPS).
+    """
+    # 1. Kill Intensity: High kills relative to damage dealt (The Assassin signature)
+    # We use .replace(0, 1) to avoid division by zero errors
+    df_players['kill_intensity'] = (
+        df_players['kills'] / (df_players['damagetochampions'] / 1000).replace(0, 1)
+    )
+
+    # 2. Solo Potential: High kills relative to assists (Split-pushers/Assassins)
+    df_players['solo_potential'] = (
+        df_players['kills'] / (df_players['assists'] + 1)
+    )
+
+    # 3. Tankiness Ratio: Mitigation relative to damage taken
+    df_players['mitigation_efficiency'] = (
+        df_players['damagemitigatedperminute'] / 
+        df_players['damagetakenperminute'].replace(0, 1)
+    )
+    
     return df_players
 
 def clean_and_enhance_data():
